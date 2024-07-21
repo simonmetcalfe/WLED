@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+
+#esp32-s2
+firmware = '/.pio/build/esp32s2_saola/firmware.bin'
+elf = '/.pio/build/esp32s2_saola/firmware.elf'
+
+rfc2217ServerPort = 4000

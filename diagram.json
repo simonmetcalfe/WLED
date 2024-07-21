@@ -1,0 +1,54 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-esp32-s2-devkitm-1",
+        "id": "esp",
+        "top": -88.23,
+        "left": -203.69,
+        "rotate": 90,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-neopixel",
+        "id": "rgb1",
+        "top": 99.7,
+        "left": -240.8,
+        "rotate": 180,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-neopixel",
+        "id": "rgb2",
+        "top": 99.7,
+        "left": -212,
+        "rotate": 180,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-neopixel-canvas",
+        "id": "neopixels2",
+        "top": -474.7,
+        "left": -75.5,
+        "rotate": 270,
+        "attrs": { "rows": "96", "cols": "8", "pixelate": "circle" }
+      },
+      {
+        "type": "wokwi-neopixel-canvas",
+        "id": "neopixels3",
+        "top": -513.1,
+        "left": -104.3,
+        "rotate": 270,
+        "attrs": { "rows": "64", "cols": "1", "pixelate": "circle" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "rgb1:DOUT", "rgb2:DIN", "green", [ "h0" ] ],
+      [ "esp:16", "neopixels3:DIN", "green", [ "v192", "h652.8" ] ]
+    ],
+    "dependencies": {}
+  }
